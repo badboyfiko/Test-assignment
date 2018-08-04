@@ -5,16 +5,14 @@ import styles from './Components.scss'
 
 const Container = ({children, ...props}) => {
   return (
-    <div className={styles.backgroundColor}>
-      <Grid {...props}>
-        {children}
-      </Grid>
-    </div>
+    <Grid {...props} className={styles.mainContainer}>
+      {children}
+    </Grid>
   )
 }
 
 Container.propTypes = {
-  children: PropTypes.bool,
+  children: PropTypes.array,
 }
 
 export default Container
