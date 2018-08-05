@@ -13,13 +13,21 @@
     background-color: #f7f9fc;
     border-bottom: #ccd8e0 1px solid;
     height: 60px;
-    padding-left: 25px;
+    padding-left: 20px;
   }
   .body {
     display: flex;
+    flex-direction: column;
     flex: 1;
     background-color: #ffffff;
   }
+}
+
+.divider {
+  display: flex;
+  flex: 1;
+  height: 1px;
+  background-color: #ccd8e0;
 }
 
 .sectorsRow {
@@ -73,6 +81,7 @@
     display: none;
   }
 }
+
 .chart {
   width: 100%;
   .row {
@@ -122,4 +131,52 @@
       }
     }
   }
+}
+
+.table {
+  width: 100%;
+  overflow: auto;
+  .flexCol {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    @media only screen and (min-width : 768px) {
+      width: auto;
+    }
+    .rowWrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .flexRow, .tableHeader {
+      display: flex;
+      flex: 1;
+      height: 80px;
+      .tableItemStart{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+      }
+      .tableItemEnd{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+      }
+    }
+    .tableHeader {
+      height: 60px;
+      background-color: #f7f9fc;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  height: 85px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import pageQueries from './Page.queries'
-import {Container, Box, Sectors, Chart} from './components'
+import {Container, Box, Sectors, Chart, Table, Button} from './components'
 
 export const Page = ({company, loading}) => {
   if (loading) {
@@ -37,30 +37,11 @@ export const Page = ({company, loading}) => {
         />
       </Box>
       <Box header="companies by investment size">
-        <Chart
-          // data={company}
-          data={company}
-        />
+        <Chart data={company} />
       </Box>
-      <Box header="company name">
-        <table>
-          <tr>
-            <th>COMPANY NAME</th>
-            <th>STAGE</th>
-            <th>SECTOR</th>
-            <th>INVESTMENT SIZE</th>
-          </tr>
-          {
-            company.map((company, i) =>
-              <tr key={i}>
-                <td>{company.name}</td>
-                <td>{company.stage}</td>
-                <td>{company.sector}</td>
-                <td>{company.investmentSize}</td>
-              </tr>
-            )
-          }
-        </table>
+      <Box style={{marginBottom: 40}}>
+        <Table data={company} />
+        <Button />
       </Box>
     </Container>
   )

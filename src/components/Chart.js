@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Components.scss'
 import PieChart from 'react-minimal-pie-chart'
-import {Grid, Row, Col} from 'react-bootstrap'
+import {Row, Col} from 'react-bootstrap'
 
 const colors = [
   '#3993bb',
