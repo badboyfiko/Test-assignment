@@ -42,7 +42,6 @@ const Table = ({data}) => {
           </div>
         ))}
       </div>
-      <Divider />
     </div>
   )
 }

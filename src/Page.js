@@ -1,35 +1,41 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import pageQueries from './Page.queries'
-import {Container, Box, Sectors, Chart, Table, Button} from './components'
+import {Container, Box, Sectors, Chart, Table, ModalButton} from './components'
 
 export const Page = ({company, loading}) => {
   if (loading) {
     return <span>Loading data...</span>
   }
-
+  const sectorCount = (sector) => {
+    let count = 0
+    company.map(company => {
+      if (company.sector === sector) count++
+    })
+    return count
+  }
   return (
     <Container>
       <Box header="companies by sectors">
         <Sectors
           data={[
             {
-              count: 2,
+              count: sectorCount('Fintech'),
               name: 'fintech',
               id: 'fintech'
             },
             {
-              count: 3,
+              count: sectorCount('Insurtech'),
               name: 'insurtech',
               id: 'insurtech'
             },
             {
-              count: 2,
+              count: sectorCount('Roboadvisory'),
               name: 'roboadvisory',
               id: 'roboadvisory'
             },
             {
-              count: 1,
+              count: sectorCount('IOT'),
               name: 'iot',
               id: 'iot'
             },
@@ -41,7 +47,7 @@ export const Page = ({company, loading}) => {
       </Box>
       <Box style={{marginBottom: 40}}>
         <Table data={company} />
-        <Button />
+        <ModalButton />
       </Box>
     </Container>
   )

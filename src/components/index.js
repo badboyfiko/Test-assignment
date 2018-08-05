@@ -4,7 +4,7 @@ import Box from './Box'
 import Sectors from './Sectors'
 import Chart from './Chart'
 import Table from './Table'
-import Button from './Button'
+import ModalButton from './ModalButton'
 
 export {
   Container,
@@ -12,5 +12,5 @@ export {
   Sectors,
   Chart,
   Table,
-  Button,
+  ModalButton,
 }
