@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import pageQueries from './Page.queries'
-import {Container, Box, Sectors} from './components'
+import {Container, Box, Sectors, Chart} from './components'
 
 export const Page = ({company, loading}) => {
   if (loading) {
@@ -34,6 +34,12 @@ export const Page = ({company, loading}) => {
               id: 'iot'
             },
           ]}
+        />
+      </Box>
+      <Box header="companies by investment size">
+        <Chart
+          // data={company}
+          data={company}
         />
       </Box>
       <Box header="company name">

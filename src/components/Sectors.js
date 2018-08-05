@@ -9,7 +9,7 @@ const Sectors = ({data}) => {
         <div className={styles.sectorWrapper}>
           <div className={styles.sector}>
             <h1>{sector.count}</h1>
-            <h2>{sector.name}</h2>
+            <h3>{sector.name}</h3>
             <img
               className={styles.image}
               src={`../../Assets/Assets/Icons/ico_${sector.id}.svg`}
