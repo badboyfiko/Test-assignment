@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import pageQueries from './Page.queries'
-import {Container, Box} from './components'
+import {Container, Box, Sectors} from './components'
 
 export const Page = ({company, loading}) => {
   if (loading) {
@@ -11,6 +11,32 @@ export const Page = ({company, loading}) => {
   return (
     <Container>
       <Box header="companies by sectors">
+        <Sectors
+          data={[
+            {
+              count: 2,
+              name: 'fintech',
+              id: 'fintech'
+            },
+            {
+              count: 3,
+              name: 'insurtech',
+              id: 'insurtech'
+            },
+            {
+              count: 2,
+              name: 'roboadvisory',
+              id: 'roboadvisory'
+            },
+            {
+              count: 1,
+              name: 'iot',
+              id: 'iot'
+            },
+          ]}
+        />
+      </Box>
+      <Box header="company name">
         <table>
           <tr>
             <th>COMPANY NAME</th>

@@ -6,7 +6,7 @@ const Box = ({header, children}) => {
   return (
     <div className={styles.box}>
       <div className={styles.header}>
-        <h1>{header}</h1>
+        <h2>{header}</h2>
       </div>
       <div className={styles.body}>
         {children}
