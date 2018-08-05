@@ -37,7 +37,6 @@
         "react-bootstrap": "^0.32.1",
         "react-css-modules": "^4.7.4",
         "react-dom": "^16.4.1",
-        "react-donut-chart": "^1.1.7",
         "react-minimal-pie-chart": "^3.0.2"
     },
     "devDependencies": {
