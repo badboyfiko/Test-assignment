@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Components.scss'
 
-const Input = ({header, children, type, ...props}) => {
+const Input = ({header, children, type, passRef, ...props}) => {
   const isSelect = children && children.length > 0
   const isNumber = type === 'number'
   const Arrow = () => <div className={styles.arrow} />
@@ -12,10 +12,10 @@ const Input = ({header, children, type, ...props}) => {
       <p>{header}</p>
       <div className={styles.fieldWrapper}>
         {isSelect
-          ? <select required {...props}>
+          ? <select ref={passRef} required {...props}>
             {children}
           </select>
-          : <input type={type} required {...props} />}
+          : <input ref={passRef} type={type} required {...props} />}
         {isSelect && <Arrow />}
         {isNumber && <Eur />}
       </div>
@@ -27,6 +27,7 @@ Input.propTypes = {
   header: PropTypes.string,
   type: PropTypes.string,
   children: PropTypes.arrayOf(PropTypes.element),
+  passRef: PropTypes.func,
 }
 
 export default Input

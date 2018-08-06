@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import pageQueries from './Page.queries'
+import {getCompanies} from './Page.queries'
+import {graphql, compose} from 'react-apollo'
 import {Container, Box, Sectors, Chart, Table, ModalButton} from './components'
 
 export const Page = ({company, loading}) => {
@@ -25,9 +26,9 @@ export const Page = ({company, loading}) => {
               id: 'fintech'
             },
             {
-              count: sectorCount('Insurtech'),
-              name: 'insurtech',
-              id: 'insurtech'
+              count: sectorCount('Insuretech'),
+              name: 'insuretech',
+              id: 'insuretech'
             },
             {
               count: sectorCount('Roboadvisory'),
@@ -58,4 +59,8 @@ Page.propTypes = {
   company: PropTypes.array
 }
 
-export default pageQueries(Page)
+export default compose(
+  graphql(getCompanies, {
+    props: ({ownProps, data}) => data,
+  }),
+)(Page)

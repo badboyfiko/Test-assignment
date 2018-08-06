@@ -1,7 +1,6 @@
 import gql from 'graphql-tag'
-import {graphql, compose} from 'react-apollo'
 
-const getCompanies = gql`
+export const getCompanies = gql`
   query getCompanies {
     company {
       name
@@ -11,7 +10,7 @@ const getCompanies = gql`
     }
   }`
 
-const addCompany = gql`
+export const ADD_COMPANY = gql`
   mutation ($name: String!, $stage: String!, $sector: String!, $investmentSize: Int!) {
     addCompany(name: $name, stage: $stage, sector: $sector, investmentSize: $investmentSize) {
       name
@@ -20,10 +19,3 @@ const addCompany = gql`
       investmentSize
     }
   }`
-
-export default compose(
-  graphql(getCompanies, {
-    props: ({ownProps, data}) => data,
-  }),
-  graphql(addCompany, {name: 'addCompany'}),
-)
