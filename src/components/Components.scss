@@ -193,3 +193,100 @@
     }
   }
 }
+
+.smallContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 375px;
+  margin: auto;
+  padding-top: 50px;
+  form {
+    width: 100%;
+  }
+}
+
+.modal {
+  h5 {
+    margin-bottom: 20px;
+  }
+  .buttonWrapper {
+    height: 105px;
+    button {
+      color: white;
+      font-weight: bold;
+      background-color: #0d7380;
+      border: none;
+    }
+  }
+}
+
+:global .modal-content {
+  border-radius: 0;
+  border: none;
+}
+
+.input {
+  margin-top: 30px;
+  .fieldWrapper {
+    width: 100%;
+    position: relative;
+  }
+  p {
+    margin-bottom: 10px;
+    color: #394c52;
+  }
+  select, input {
+    width: 100%;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: #b9c3cd 2px solid;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 15px;
+    color: #394c52;
+    &::placeholder {
+      color: #9babb6;
+    }
+    &:focus, :active {
+      outline: none;
+    }
+  }
+  select {
+    cursor: pointer;
+    &:invalid {
+      color: #9babb6;
+    }
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  .arrow {
+    position: absolute;
+    right: 22px;
+    top: 18px;
+    height: 8px;
+    width: 8px;
+    transform: rotate(-45deg);
+    border-bottom: #b9c3cd 2px solid;
+    border-left: #b9c3cd 2px solid;
+  }
+  .eur {
+    position: absolute;
+    color: #b9c3cd;
+    font-size: 15px;
+    right: 22px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

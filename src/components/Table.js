@@ -35,7 +35,7 @@ const Table = ({data}) => {
                 <p>{company.sector}</p>
               </div>
               <div className={styles.tableItemEnd}>
-                <p>{company.investmentSize}</p>
+                <p>{company.investmentSize} EUR</p>
               </div>
             </div>
             {i !== data.length - 1 && <Divider />}
